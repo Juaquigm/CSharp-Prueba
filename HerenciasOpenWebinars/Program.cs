@@ -31,6 +31,7 @@ namespace HerenciasOpenWebinars
             ListExplanation();
             StackExplanation();
             QueueExplanation();
+            DictionaryExplanation();
 
 
 
@@ -62,6 +63,24 @@ namespace HerenciasOpenWebinars
             Queue<int> queueNumbers = new Queue<int>();
             queueNumbers.Enqueue(1);
             queueNumbers.Dequeue();
+        }
+
+        private static void DictionaryExplanation()
+        {
+            Dictionary<string, Cliente> clientes = new Dictionary<string, Cliente>();
+            clientes.Add("000000000", new Cliente() { Nombre = "Juaki" });
+            //Da error lo siguiente ya que es lo mismo clave
+            //clientes.Add("000000000", new Cliente() { Nombre = "Luis" });
+            if (!clientes.ContainsKey("000000000"))
+            {
+                clientes.Add("000000000", new Cliente() { Nombre = "Luis" });
+
+            }
+            //Para llamar clientes["000000000"]
+            clientes["000000000"] = new Cliente();
+            Cliente miCliente = clientes["000000000"];
+            //Keys para especificar las claves o Values solo los valores
+            //clientes.TryGetValue("000000000");
         }
         static void WriteLineSpecial<T>(T data, string prefix, string suffix)
         {
