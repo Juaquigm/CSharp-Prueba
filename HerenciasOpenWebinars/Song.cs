@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace HerenciasOpenWebinars
 {
-    public class Song: Media
+    public class Song : Media
     {
         public long Seconds { get; set; }
 
-       
+
         public ShelvePosition Position { get; set; }
+
+        public string Category { get; set; }
+
+        public List<Artist> Artist {get; set;}
+
+        public int Visits { get; set; }
+
+        
 
         public override void Play()
         {
